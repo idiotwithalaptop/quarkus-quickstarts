@@ -1,0 +1,11 @@
+version: '3.0'
+
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile.build
+    volumes:
+      - .:/opt/app
+      - ./.gradle-cache:/root/.gradle
+    working_dir: /opt/app
